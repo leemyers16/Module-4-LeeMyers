@@ -19,34 +19,34 @@ var buttonB = document.getElementById("b");
 var buttonC = document.getElementById("c");
 var buttonD = document.getElementById("d");
 
-// Test question object
+// Quiz question objects
 var quizQuestions = [{
     question: "How many elements can you apply an 'ID' attribute to?",
-    choiceA: "As many as you want",
-    choiceB: "3",
+    choiceA: "As much as you like",
+    choiceB: "5",
     choiceC: "1",
-    choiceD: "128",
+    choiceD: "175",
     correctAnswer: "c"},
   {
-    question: "What does DOM stand for?",
-    choiceA: "Document Object Model",
-    choiceB: "Display Object Management",
-    choiceC: "Digital Ordinance Model",
-    choiceD: "Desktop Oriented Mode",
+    question: "What does 'html' stand for?",
+    choiceA: "Hypertext Markup Language",
+    choiceB: "Hypertextual Mark Language",
+    choiceC: "Hypertext Masking Language",
+    choiceD: "Hypertext Make Language",
     correctAnswer: "a"},
    {
-    question: "What is used primarily to add styling to a web page?",
+    question: "What do you typically use to style your website?",
     choiceA: "HTML",
     choiceB: "CSS",
     choiceC: "Python",
-    choiceD: "React.js",
+    choiceD: "Ruby",
     correctAnswer: "b"},
     {
-    question: "What HTML tags are JavaScript code wrapped in?",
-    choiceA: "&lt;div&gt;",
-    choiceB: "&lt;link&gt;",
-    choiceC: "&lt;head&gt;",
-    choiceD: "&lt;script&gt;",
+    question: "Arrays in JavaScript can be used to store?",
+    choiceA: "numbers and strings",
+    choiceB: "other arrays",
+    choiceC: "booleans",
+    choiceD: "all of the above",
     correctAnswer: "d"},
     {
     question: "When is localStorage data cleared?",
@@ -56,11 +56,11 @@ var quizQuestions = [{
     choiceD: "On computer restart",
     correctAnswer: "a"},  
     {
-    question: "What does WWW stand for?",
-    choiceA: "Web World Workings",
-    choiceB: "Weak Winter Wind",
-    choiceC: "World Wide Web",
-    choiceD: "Wendy Wants Waffles",
+    question: "How do you write and 'if' statement in Javascript?",
+    choiceA: "if i == 5 then",
+    choiceB: "if i==5 then",
+    choiceC: "if (i==5)",
+    choiceD: "if i = 5 then",
     correctAnswer: "c"},
     {
     question: "What HTML attribute references an external JavaScript file?",
@@ -94,7 +94,7 @@ function generateQuizQuestion(){
     buttonD.innerHTML = currentQuestion.choiceD;
 };
 
-// Start Quiz function starts the TimeRanges, hides the start button, and displays the first quiz question.
+// Start Quiz function starts the TimeRanges, hides the start button, and shows the first quiz question.
 function startQuiz(){
     gameoverDiv.style.display = "none";
     startQuizDiv.style.display = "none";
@@ -112,7 +112,7 @@ function startQuiz(){
       }, 1000);
     quizBody.style.display = "block";
 }
-// This function is the end page screen that displays your score after either completeing the quiz or upon timer run out
+// This function is the end page screen that shows your score after either finishing the quiz or when the timer runs out
 function showScore(){
     quizBody.style.display = "none"
     gameoverDiv.style.display = "flex";
@@ -121,7 +121,7 @@ function showScore(){
     finalScoreEl.innerHTML = "You got " + score + " out of " + quizQuestions.length + " correct!";
 }
 
-// On click of the submit button, we run the function highscore that saves and stringifies the array of high scores already saved in local stoage
+// when you press the submit button, we run the function highscore that saves and stringifies the array of high scores already saved in local stoage
 // as well as pushing the new user name and score into the array we are saving in local storage. Then it runs the function to show high scores.
 submitScoreBtn.addEventListener("click", function highscore(){
 
@@ -150,7 +150,7 @@ submitScoreBtn.addEventListener("click", function highscore(){
 
 });
 
-// This function clears the list for the high scores and generates a new high score list from local storage
+// This function deletes the list for the high scores and generates a new high score list from local storage
 function generateHighscores(){
     highscoreDisplayName.innerHTML = "";
     highscoreDisplayScore.innerHTML = "";
@@ -183,7 +183,7 @@ function clearScore(){
     highscoreDisplayScore.textContent = "";
 }
 
-// This function sets all the variables back to their original values and shows the home page to enable replay of the quiz
+// This function sets all the variables back to their original values and shows the home page to allow you to replay of the quiz
 function replayQuiz(){
     highscoreContainer.style.display = "none";
     gameoverDiv.style.display = "none";
@@ -213,5 +213,5 @@ function checkAnswer(answer){
     }
 }
 
-// This button starts the quiz!
+// This button begins the quiz!
 startQuizButton.addEventListener("click",startQuiz);
