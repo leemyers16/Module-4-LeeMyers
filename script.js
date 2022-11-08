@@ -205,13 +205,18 @@ function checkAnswer(answer){
         //displays the results div that the answer is correct.
     }else if (answer !== correct && currentQuestionIndex !== finalQuestionIndex){
         alert("That Is Incorrect.")
+        timeLeft -= 10
         currentQuestionIndex++;
         generateQuizQuestion();
         //display in the results div that the answer is wrong.
     }else{
         showScore();
     }
-}
+}quiz
+if (timeLeft < 0 ){ 
 
+    timeLeft = 0 
+    showHighscore()
+ }
 // This button begins the quiz!
 startQuizButton.addEventListener("click",startQuiz);
